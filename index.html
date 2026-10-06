@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Wyle, le carnet privé de votre groupe d'amis</title>
+<meta name="description" content="A Wyle est un carnet privé où votre groupe d'amis partage ses photos, ses sorties et ses souvenirs. Sans publicité, sans abonnés, sans suivi.">
+<meta name="theme-color" content="#182720">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A Wyle, le carnet privé de votre groupe d'amis">
+<meta property="og:description" content="Photos, sorties, souvenirs : tout reste entre vous. Sans publicité, sans abonnés, sans suivi.">
+<meta property="og:image" content="https://awyle.com/img/og.jpg">
+<meta property="og:url" content="https://awyle.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine-deep:#182720;
+  --pine:#1F3329;
+  --paper:#F6F1E4;
+  --paper-dim:#EEE7D4;
+  --ink:#1E2A22;
+  --ink-soft:#4B564C;
+  --gold:#C9A24C;
+  --gold-soft:#E4CE93;
+  --line:#D9CFB3;
+  --gutter:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:1.0625rem;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.1;letter-spacing:-.02em}
+
+/* Hero */
+.hero{background:var(--pine-deep);color:var(--paper);overflow:hidden}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding-block:22px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:var(--paper)}
+.brand img{width:40px;height:40px;border-radius:10px}
+.lang{
+  font:600 .875rem 'Inter',sans-serif;
+  background:transparent;color:var(--gold-soft);
+  border:1px solid rgba(228,206,147,.4);border-radius:999px;
+  padding:7px 16px;cursor:pointer;
+}
+.lang:hover{border-color:var(--gold-soft)}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(24px,5vw,72px);align-items:center;
+  padding-block:clamp(28px,6vw,80px) clamp(48px,8vw,110px);
+}
+.hero h1{font-weight:800;font-size:clamp(2.35rem,5.6vw,4.4rem);max-width:12ch}
+.hero .lead{margin-top:24px;max-width:34rem;font-size:clamp(1.05rem,1.6vw,1.25rem);color:#D8D3C0}
+.stores{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.store{
+  display:flex;flex-direction:column;justify-content:center;
+  min-width:176px;padding:11px 22px;border-radius:14px;
+  background:var(--paper);color:var(--pine-deep);text-decoration:none;
+  border:1.5px solid var(--paper);line-height:1.2;
+}
+.store small{font-size:.75rem;font-weight:500;color:var(--ink-soft)}
+.store strong{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem}
+a.store:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.store.soon{background:transparent;color:var(--paper);border-color:rgba(246,241,228,.35);cursor:default}
+.store.soon small{color:var(--gold-soft)}
+.web-link{display:inline-block;margin-top:22px;color:var(--gold-soft);font-weight:500;text-underline-offset:4px}
+
+/* Phones */
+.phones{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:0;min-height:0}
+.phone{
+  width:min(48%,340px);flex:none;
+  border:9px solid #0E1814;border-radius:44px;background:#0E1814;overflow:hidden;
+  box-shadow:0 50px 80px -30px rgba(0,0,0,.65),0 0 0 1.5px rgba(228,206,147,.18);
+}
+.phone img{width:100%;height:auto;border-radius:34px}
+.phone.front{transform:rotate(-3.5deg);position:relative;z-index:2;margin-right:-6%}
+.phone.back{transform:translateY(12%) rotate(3deg)}
+
+/* Sections */
+section{padding-block:clamp(56px,9vw,112px)}
+h2{font-weight:700;font-size:clamp(1.8rem,3.8vw,2.9rem);max-width:15ch}
+.features .cols{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px)}
+.rows{list-style:none;border-top:1.5px solid var(--ink)}
+.rows li{padding:26px 0;border-bottom:1px solid var(--line)}
+.rows h3{font-weight:600;font-size:1.3rem;letter-spacing:-.01em}
+.rows p{margin-top:8px;color:var(--ink-soft);max-width:34rem}
+
+.steps{background:var(--paper-dim)}
+.steps h2{margin-bottom:clamp(32px,5vw,56px)}
+.steps ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.steps li{border-top:3px solid var(--gold);padding-top:18px}
+.steps .n{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.4rem;line-height:1;color:var(--pine)}
+.steps h3{margin-top:14px;font-weight:600;font-size:1.25rem}
+.steps p{margin-top:8px;color:var(--ink-soft)}
+
+.closing{background:var(--pine);color:var(--paper)}
+.closing-grid{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:center;justify-content:space-between}
+.closing h2{max-width:18ch}
+.closing .stores{margin-top:0}
+
+footer{background:var(--pine-deep);color:#B9B5A3;font-size:.9375rem;padding-block:28px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+footer a{color:var(--gold-soft);text-underline-offset:4px}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero h1{max-width:16ch}
+  .phones{margin-top:8px;padding-bottom:10%}
+  .phone{width:min(44%,260px);border-width:7px;border-radius:36px}
+  .phone img{border-radius:29px}
+  .features .cols{grid-template-columns:1fr}
+  .steps ol{grid-template-columns:1fr}
+}
+@media (max-width:420px){
+  .store{min-width:0;flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="#top"><img src="img/icon-180.png" alt="" width="40" height="40"><span>A Wyle</span></a>
+      <button class="lang" id="lang" type="button" aria-label="Changer de langue / Change language">EN</button>
+    </div>
+
+    <div class="hero-grid" id="top">
+      <div>
+        <h1 data-k="h1">Le carnet privé de votre groupe d'amis.</h1>
+        <p class="lead" data-k="lead">Photos, sorties, souvenirs : tout ce qui compte reste entre vous. Sans publicité, sans abonnés, sans suivi.</p>
+
+        <div class="stores" data-stores>
+          <a class="store soon" data-store="ios" aria-disabled="true"><small data-k="soon">Bientôt sur</small><strong>App Store</strong></a>
+          <a class="store soon" data-store="android" aria-disabled="true"><small data-k="soon">Bientôt sur</small><strong>Google Play</strong></a>
+        </div>
+        <a class="web-link" href="https://augustinpiq-cloud.github.io/instants/" data-k="web">Déjà disponible dans votre navigateur</a>
+      </div>
+
+      <div class="phones">
+        <figure class="phone front"><img src="img/app-a.jpg" width="720" height="1560" alt="Le fil du groupe « Les copains d'abord » avec une soirée camping photographiée autour d'un feu."></figure>
+        <figure class="phone back"><img src="img/app-b.jpg" width="720" height="1560" alt="Un anniversaire partagé dans le fil, avec la légende, le lieu et le bouton pour ajouter une photo."></figure>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="features">
+    <div class="wrap cols">
+      <h2 data-k="h2a">Un fil, un calendrier, un livre.</h2>
+      <ul class="rows">
+        <li>
+          <h3 data-k="f1t">Le fil</h3>
+          <p data-k="f1p">Chaque photo arrive avec sa légende, son lieu et sa date. Le groupe réagit d'un emoji ou d'un commentaire.</p>
+        </li>
+        <li>
+          <h3 data-k="f2t">Le calendrier</h3>
+          <p data-k="f2p">Retrouvez vos instants jour par jour, comme dans un agenda.</p>
+        </li>
+        <li>
+          <h3 data-k="f3t">Le livre</h3>
+          <p data-k="f3p">Marquez vos moments préférés d'une étoile : ils rejoignent le livre du groupe.</p>
+        </li>
+        <li>
+          <h3 data-k="f4t">Sur invitation</h3>
+          <p data-k="f4p">On rejoint un groupe avec un code d'invitation. Personne d'autre n'y a accès.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2 data-k="h2b">Prêt en trois étapes.</h2>
+      <ol>
+        <li>
+          <span class="n" aria-hidden="true">1</span>
+          <h3 data-k="s1t">Créez votre groupe</h3>
+          <p data-k="s1p">Choisissez un nom, c'est tout.</p>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">2</span>
+          <h3 data-k="s2t">Invitez vos amis</h3>
+          <p data-k="s2p">Partagez le code d'invitation du groupe.</p>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">3</span>
+          <h3 data-k="s3t">Postez vos instants</h3>
+          <p data-k="s3p">Une photo, une légende, un lieu.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap closing-grid">
+      <h2 data-k="h2c">Bientôt sur iPhone et Android.</h2>
+      <div class="stores" data-stores>
+        <a class="store soon" data-store="ios" aria-disabled="true"><small data-k="soon">Bientôt sur</small><strong>App Store</strong></a>
+        <a class="store soon" data-store="android" aria-disabled="true"><small data-k="soon">Bientôt sur</small><strong>Google Play</strong></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© A Wyle</span>
+    <a href="https://augustinpiq-cloud.github.io/instants/privacy-policy.html" data-k="privacy">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+/* ---- Liens de téléchargement ----
+   Collez ici les adresses des fiches quand les apps sont publiées.
+   Tant qu'une adresse est vide, le bouton affiche « Bientôt ». */
+var STORES = {
+  ios: "",      // ex. "https://apps.apple.com/app/id6818761667"
+  android: ""   // ex. "https://play.google.com/store/apps/details?id=com.awyle.app"
+};
+
+var EN = {
+  h1: "The private notebook for your group of friends.",
+  lead: "Photos, outings, memories: everything that matters stays between you. No ads, no followers, no tracking.",
+  soon: "Coming soon on",
+  get: "Download on",
+  web: "Already available in your browser",
+  h2a: "A feed, a calendar, a book.",
+  f1t: "The feed",
+  f1p: "Every photo comes with its caption, place and date. The group reacts with an emoji or a comment.",
+  f2t: "The calendar",
+  f2p: "Find your moments day by day, like in a diary.",
+  f3t: "The book",
+  f3p: "Mark your favorite moments with a star and they join the group's book.",
+  f4t: "By invitation only",
+  f4p: "You join a group with an invitation code. Nobody else has access.",
+  h2b: "Ready in three steps.",
+  s1t: "Create your group", s1p: "Pick a name, that's it.",
+  s2t: "Invite your friends", s2p: "Share the group's invitation code.",
+  s3t: "Post your moments", s3p: "A photo, a caption, a place.",
+  h2c: "Coming soon on iPhone and Android.",
+  privacy: "Privacy policy"
+};
+var FR = {};
+var META = {
+  fr: {title:"A Wyle, le carnet privé de votre groupe d'amis"},
+  en: {title:"A Wyle, the private notebook for your group of friends"}
+};
+
+var nodes = document.querySelectorAll("[data-k]");
+nodes.forEach(function(n){ FR[n.getAttribute("data-k")] = n.innerHTML; });
+FR.get = "Télécharger sur";
+
+function storeState(lang){
+  var d = lang === "en" ? EN : FR;
+  document.querySelectorAll("[data-store]").forEach(function(a){
+    var url = STORES[a.getAttribute("data-store")];
+    var small = a.querySelector("small");
+    if(url){
+      a.href = url; a.classList.remove("soon"); a.removeAttribute("aria-disabled");
+      small.textContent = d.get;
+    } else {
+      a.removeAttribute("href"); a.classList.add("soon"); a.setAttribute("aria-disabled","true");
+      small.textContent = d.soon;
+    }
+  });
+}
+
+function setLang(lang){
+  var d = lang === "en" ? EN : FR;
+  nodes.forEach(function(n){
+    var k = n.getAttribute("data-k");
+    if(k === "soon") return;
+    if(d[k] != null) n.innerHTML = d[k];
+  });
+  document.documentElement.lang = lang;
+  document.title = META[lang].title;
+  document.getElementById("lang").textContent = lang === "en" ? "FR" : "EN";
+  storeState(lang);
+  try{ localStorage.setItem("awyle-lang", lang); }catch(e){}
+}
+
+var start = "fr";
+try{ start = localStorage.getItem("awyle-lang") || ""; }catch(e){}
+if(!start) start = (navigator.language || "fr").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+setLang(start);
+
+document.getElementById("lang").addEventListener("click", function(){
+  setLang(document.documentElement.lang === "en" ? "fr" : "en");
+});
+</script>
+</body>
+</html>
